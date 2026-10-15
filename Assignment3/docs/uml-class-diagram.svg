@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1370" height="1091" viewBox="0 0 1370 1091"><rect width="100%" height="100%" fill="#ffffff"/><defs>
+<marker id="tri" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+  <path d="M1,1 L14,8 L1,15 Z" fill="#ffffff" stroke="#222222" stroke-width="1.6" stroke-dasharray="none"/></marker>
+<marker id="dia" markerWidth="24" markerHeight="16" refX="1" refY="8" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+  <path d="M1,8 L11,2 L21,8 L11,14 Z" fill="#ffffff" stroke="#4b4b4b" stroke-width="2"/></marker>
+<marker id="arr" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+  <path d="M2,2 L14,8 L2,14" fill="none" stroke="#4b4b4b" stroke-width="2.4"/></marker>
+</defs><rect x="50" y="80" width="470" height="188" rx="4" fill="#e8e8e8" stroke="#4f4f4f" stroke-width="2"/>
+<path d="M50,102 L50,84 Q50,80 54,80 L516,80 Q520,80 520,84 L520,102 Z" fill="#4f4f4f"/>
+<text x="285.0" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">ABSTRACTION</text>
+<text x="285.0" y="120" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222">&#171;abstract&#187;</text>
+<text x="285.0" y="138" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" font-style="italic" fill="#111111">Notification</text>
+<line x1="50" y1="146" x2="520" y2="146" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="60" y="166" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve"># sender : MessageSender      &lt;-- the bridge</text>
+<line x1="50" y1="173" x2="520" y2="173" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="60" y="193" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ Notification(sender : MessageSender)</text>
+<text x="60" y="210" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ setSender(sender : MessageSender)</text>
+<text x="60" y="227" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" font-style="italic" fill="#222222" xml:space="preserve">+ send(recipient, message)</text>
+<text x="60" y="244" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve"># deliver(recipient, title, body) : boolean</text>
+<text x="60" y="261" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ describe() : String</text>
+<rect x="108" y="314" width="412" height="138" rx="4" fill="#f5f5f5" stroke="#7a7a7a" stroke-width="2"/>
+<path d="M108,336 L108,318 Q108,314 112,314 L516,314 Q520,314 520,318 L520,336 Z" fill="#7a7a7a"/>
+<text x="314.0" y="329" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">REFINED ABSTRACTION</text>
+<text x="314.0" y="354" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">UrgentNotification</text>
+<line x1="108" y1="364" x2="520" y2="364" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="384" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- fallbacks : List&lt;(MessageSender, recipient)&gt;</text>
+<line x1="108" y1="391" x2="520" y2="391" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="411" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ addFallback(sender, recipient?)</text>
+<text x="118" y="428" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ send(recipient, message)</text>
+<text x="118" y="445" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">    adds [URGENT], uses first available sender</text>
+<rect x="108" y="470" width="412" height="138" rx="4" fill="#f5f5f5" stroke="#7a7a7a" stroke-width="2"/>
+<path d="M108,492 L108,474 Q108,470 112,470 L516,470 Q520,470 520,474 L520,492 Z" fill="#7a7a7a"/>
+<text x="314.0" y="485" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">REFINED ABSTRACTION</text>
+<text x="314.0" y="510" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">EncryptedNotification</text>
+<line x1="108" y1="520" x2="520" y2="520" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="540" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- key : byte[]</text>
+<line x1="108" y1="547" x2="520" y2="547" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="567" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ send(recipient, message)</text>
+<text x="118" y="584" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ encrypt(plain) : String</text>
+<text x="118" y="601" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ decrypt(cipher) : String</text>
+<rect x="108" y="626" width="412" height="155" rx="4" fill="#f5f5f5" stroke="#7a7a7a" stroke-width="2"/>
+<path d="M108,648 L108,630 Q108,626 112,626 L516,626 Q520,626 520,630 L520,648 Z" fill="#7a7a7a"/>
+<text x="314.0" y="641" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">REFINED ABSTRACTION</text>
+<text x="314.0" y="666" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">ScheduledBatchNotification</text>
+<line x1="108" y1="676" x2="520" y2="676" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="696" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- recipients : List&lt;String&gt;</text>
+<text x="118" y="713" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- scheduledFor : LocalDateTime</text>
+<line x1="108" y1="720" x2="520" y2="720" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="740" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ addRecipient(recipient)</text>
+<text x="118" y="757" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ send(batchLabel, message)</text>
+<text x="118" y="774" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ getLastSummary() : BatchSummary</text>
+<rect x="108" y="799" width="412" height="138" rx="4" fill="#f5f5f5" stroke="#7a7a7a" stroke-width="2"/>
+<path d="M108,821 L108,803 Q108,799 112,799 L516,799 Q520,799 520,803 L520,821 Z" fill="#7a7a7a"/>
+<text x="314.0" y="814" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">REFINED ABSTRACTION</text>
+<text x="314.0" y="839" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">MarketingNotification</text>
+<line x1="108" y1="849" x2="520" y2="849" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="869" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- campaign : String</text>
+<text x="118" y="886" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- optedOut : Set&lt;String&gt;</text>
+<line x1="108" y1="893" x2="520" y2="893" stroke="#7a7a7a" stroke-width="1.5"/>
+<text x="118" y="913" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ unsubscribe(recipient)</text>
+<text x="118" y="930" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ send(recipient, message)</text>
+<line x1="74" y1="868.0" x2="74" y2="268" stroke="#222222" stroke-width="1.8" marker-end="url(#tri)"/>
+<line x1="74" y1="383.0" x2="108" y2="383.0" stroke="#222222" stroke-width="1.8"/>
+<line x1="74" y1="539.0" x2="108" y2="539.0" stroke="#222222" stroke-width="1.8"/>
+<line x1="74" y1="703.5" x2="108" y2="703.5" stroke="#222222" stroke-width="1.8"/>
+<line x1="74" y1="868.0" x2="108" y2="868.0" stroke="#222222" stroke-width="1.8"/>
+<rect x="850" y="80" width="470" height="137" rx="4" fill="#f0f0f0" stroke="#626262" stroke-width="2"/>
+<path d="M850,102 L850,84 Q850,80 854,80 L1316,80 Q1320,80 1320,84 L1320,102 Z" fill="#626262"/>
+<text x="1085.0" y="95" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">IMPLEMENTOR</text>
+<text x="1085.0" y="120" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222">&#171;interface&#187;</text>
+<text x="1085.0" y="138" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">MessageSender</text>
+<line x1="850" y1="146" x2="1320" y2="146" stroke="#626262" stroke-width="1.5"/>
+<line x1="850" y1="156" x2="1320" y2="156" stroke="#626262" stroke-width="1.5"/>
+<text x="860" y="176" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ sendMessage(recipient, title, body) : boolean</text>
+<text x="860" y="193" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ isAvailable() : boolean</text>
+<text x="860" y="210" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ getChannelName() : String</text>
+<rect x="908" y="263" width="412" height="104" rx="4" fill="#f8f8f8" stroke="#909090" stroke-width="2"/>
+<path d="M908,285 L908,267 Q908,263 912,263 L1316,263 Q1320,263 1320,267 L1320,285 Z" fill="#909090"/>
+<text x="1114.0" y="278" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">CONCRETE IMPLEMENTOR</text>
+<text x="1114.0" y="303" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">TelegramMessageSender</text>
+<line x1="908" y1="313" x2="1320" y2="313" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="333" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- available : boolean</text>
+<line x1="908" y1="340" x2="1320" y2="340" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="360" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ sendMessage(...)</text>
+<rect x="908" y="385" width="412" height="104" rx="4" fill="#f8f8f8" stroke="#909090" stroke-width="2"/>
+<path d="M908,407 L908,389 Q908,385 912,385 L1316,385 Q1320,385 1320,389 L1320,407 Z" fill="#909090"/>
+<text x="1114.0" y="400" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">CONCRETE IMPLEMENTOR</text>
+<text x="1114.0" y="425" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">EmailMessageSender</text>
+<line x1="908" y1="435" x2="1320" y2="435" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="455" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- available : boolean</text>
+<line x1="908" y1="462" x2="1320" y2="462" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="482" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ sendMessage(...)</text>
+<rect x="908" y="507" width="412" height="104" rx="4" fill="#f8f8f8" stroke="#909090" stroke-width="2"/>
+<path d="M908,529 L908,511 Q908,507 912,507 L1316,507 Q1320,507 1320,511 L1320,529 Z" fill="#909090"/>
+<text x="1114.0" y="522" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">CONCRETE IMPLEMENTOR</text>
+<text x="1114.0" y="547" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">SmsMessageSender</text>
+<line x1="908" y1="557" x2="1320" y2="557" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="577" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- available : boolean</text>
+<line x1="908" y1="584" x2="1320" y2="584" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="604" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ sendMessage(...)</text>
+<rect x="908" y="629" width="412" height="121" rx="4" fill="#f8f8f8" stroke="#909090" stroke-width="2"/>
+<path d="M908,651 L908,633 Q908,629 912,629 L1316,629 Q1320,629 1320,633 L1320,651 Z" fill="#909090"/>
+<text x="1114.0" y="644" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">CONCRETE IMPLEMENTOR</text>
+<text x="1114.0" y="669" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">KafkaEventSender</text>
+<line x1="908" y1="679" x2="1320" y2="679" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="699" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- available : boolean</text>
+<text x="918" y="716" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- offset : long</text>
+<line x1="908" y1="723" x2="1320" y2="723" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="743" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ sendMessage(...)</text>
+<rect x="908" y="768" width="412" height="104" rx="4" fill="#f8f8f8" stroke="#909090" stroke-width="2"/>
+<path d="M908,790 L908,772 Q908,768 912,768 L1316,768 Q1320,768 1320,772 L1320,790 Z" fill="#909090"/>
+<text x="1114.0" y="783" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" font-weight="bold" fill="#ffffff" letter-spacing="1.5">CONCRETE IMPLEMENTOR</text>
+<text x="1114.0" y="808" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#111111">PushNotificationSender</text>
+<line x1="908" y1="818" x2="1320" y2="818" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="838" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">- available : boolean</text>
+<line x1="908" y1="845" x2="1320" y2="845" stroke="#909090" stroke-width="1.5"/>
+<text x="918" y="865" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222" xml:space="preserve">+ sendMessage(...)</text>
+<line x1="874" y1="820.0" x2="874" y2="232" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<path d="M874,217 L866,232 L882,232 Z" fill="#ffffff" stroke="#222222" stroke-width="1.6"/>
+<line x1="874" y1="315.0" x2="908" y2="315.0" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="874" y1="437.0" x2="908" y2="437.0" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="874" y1="559.0" x2="908" y2="559.0" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="874" y1="689.5" x2="908" y2="689.5" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="874" y1="820.0" x2="908" y2="820.0" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<line x1="520" y1="142" x2="850" y2="142" stroke="#4b4b4b" stroke-width="4" marker-start="url(#dia)" marker-end="url(#arr)"/>
+<rect x="567.0" y="90" width="236" height="40" rx="6" fill="#eaeaea" stroke="#4b4b4b" stroke-width="2"/>
+<text x="685.0" y="109" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="14" font-weight="bold" fill="#414141">THE BRIDGE</text>
+<text x="685.0" y="125" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#414141">has-a  (composition)</text>
+<text x="528" y="160" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#414141">1</text>
+<text x="685.0" y="164" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#414141">sender</text>
+<text x="828" y="160" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#414141">1</text>
+<text x="685.0" y="188" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" fill="#555555">set in constructor,</text>
+<text x="685.0" y="202" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" fill="#555555">replaceable via setSender()</text>
+<text x="50" y="38" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" font-weight="bold" fill="#4f4f4f">ABSTRACTION HIERARCHY</text>
+<text x="50" y="58" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#444444">what is sent (how the message is prepared)</text>
+<text x="850" y="38" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="17" font-weight="bold" fill="#626262">IMPLEMENTATION HIERARCHY</text>
+<text x="850" y="58" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#444444">how it is delivered (provider, all simulated)</text>
+<rect x="50" y="975" width="1270" height="96" rx="6" fill="#fafafa" stroke="#999999"/>
+<text x="64" y="997" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="13" font-weight="bold" fill="#222222">Legend</text>
+<line x1="64" y1="1021" x2="124" y2="1021" stroke="#222222" stroke-width="1.8" marker-end="url(#tri)"/>
+<text x="136" y="1025" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222">generalization (extends)</text>
+<line x1="380" y1="1021" x2="426" y2="1021" stroke="#222222" stroke-width="1.8" stroke-dasharray="7,5"/>
+<path d="M440,1021 L426,1013 L426,1029 Z" fill="#ffffff" stroke="#222222" stroke-width="1.6"/>
+<text x="452" y="1025" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222">realization (implements)</text>
+<line x1="700" y1="1021" x2="760" y2="1021" stroke="#4b4b4b" stroke-width="4" marker-start="url(#dia)" marker-end="url(#arr)"/>
+<text x="780" y="1025" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="12" fill="#222222">bridge: has-a, navigable</text>
+<rect x="64" y="1041" width="18" height="14" fill="#4f4f4f"/>
+<text x="90" y="1053" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" fill="#222222">ABSTRACTION</text>
+<rect x="319" y="1041" width="18" height="14" fill="#7a7a7a"/>
+<text x="345" y="1053" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" fill="#222222">REFINED ABSTRACTION</text>
+<rect x="574" y="1041" width="18" height="14" fill="#626262"/>
+<text x="600" y="1053" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" fill="#222222">IMPLEMENTOR</text>
+<rect x="829" y="1041" width="18" height="14" fill="#909090"/>
+<text x="855" y="1053" font-family="DejaVu Sans Mono, Menlo, Consolas, monospace" font-size="11" fill="#222222">CONCRETE IMPLEMENTOR</text></svg>
